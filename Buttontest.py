@@ -2,16 +2,17 @@ __author__ = 'Katyana'
 import random
 import pygame
 import sys, time
-import pygame.mixer
+#import pygame.mixer
 #from pygame.locals import *
 
 lines = open('animals.txt').read().splitlines()
 
 pygame.init()
-pygame.mixer.init()
+#pygame.mixer.init()
 
-FPS = 60 # frames per second setting
+FPS = 60  # frames per second setting
 fpsClock = pygame.time.Clock()
+
 #Variables
 screen = pygame.display.set_mode((600, 500), 0, 0) #screen size
 pygame.display.set_caption('Hello GIsHWheS!') #title
@@ -33,7 +34,7 @@ fontObj2 = pygame.font.SysFont("Arial Black", 36) #mascot text
 fontObj3 = pygame.font.SysFont("Arial Black", 34) #mascot text2
 
 #header
-textSurfaceObj1 = fontObj.render('Welcome to the GIsHWheS random mascot generator!', 1, (green))
+textSurfaceObj1 = fontObj.render('Welcome to the GIsHWheS random mascot generator!', 1, green)
 textRectObj1 = textSurfaceObj1.get_rect()
 textRectObj1.center = (300, 40)
 
@@ -45,7 +46,7 @@ textRectObj2.center = (300, 100)
 #buttondown
 buttondown = pygame.image.load("buttonpressed2.png")
 buttondownrect = buttondown.get_rect()
-buttondownrect.center = (300,425)
+buttondownrect.center = (300, 425)
 
 #too many question marks
 marks = pygame.image.load("toomany2.png")
@@ -55,10 +56,11 @@ marksrect.center = (300, 225)
 #main button
 buttonup = pygame.image.load("buttonup2.png")
 buttonuprect = buttonup.get_rect()
-buttonuprect.center = (300,425)
+buttonuprect.center = (300, 425)
 textSurfaceObj = fontObj1.render("Generate Mascot!", 1, (black))
 textRectObj = textSurfaceObj.get_rect()
 textRectObj.center = (300, 425)
+
 
 def mascotnames():
     myline1 = random.choice(lines)
@@ -73,6 +75,7 @@ def mascotnames():
     screen.blit(textSurfaceObj3, textRectObj3)
     screen.blit(textSurfaceObj4, textRectObj4)
 
+
 def updatebutton():
     screen.blit(buttondown, buttondownrect)
     textSurfaceObj = fontObj1.render("Get me another!", 1, (black))
@@ -84,7 +87,7 @@ while True:
     screen.blit(textSurfaceObj1, textRectObj1)
     screen.blit(buttonup, buttonuprect)
     screen.blit(textSurfaceObj, textRectObj)
-    if count == False:
+    if count is False:
         screen.blit(marks, marksrect)
     if buttonuprect.collidepoint(pygame.mouse.get_pos()):
         screen.blit(buttondown, buttondownrect)
