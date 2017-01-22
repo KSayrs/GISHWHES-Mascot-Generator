@@ -3,6 +3,3 @@ A Mascot Generator for the Summer 2015 GISHWHES event. GISHWHES mascots are gene
 This python (Python 2.7.10) program is a quick test of [pygame](http://pygame.org/hifi.html).
 
 Last edited July 2015.
-
-###Issues
-Sound does not currently work (using pygame's mixer).
